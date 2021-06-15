@@ -3,9 +3,11 @@
 header {
   height: 400px;
   width: 100%;
-  background-color: #4056A1;
+  background-image: url("../images/3px-tile.png");
+  background-color: #c97f00;
   color: #FFFF;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
