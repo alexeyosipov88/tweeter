@@ -9,6 +9,11 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+main {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
 
 /*
  * Global layout stuff
