@@ -1,0 +1,24 @@
+
+.styled-button {
+  font-family: "Bungee";
+  background-color: #4056A1;
+  color: #FFFF;;
+  align-self: flex-end;
+}
+.new-tweet {
+  text-align: center;
+}
+.button-and-counter {
+  display: flex;
+  justify-content: space-between;
+}
+input[type="text"], textarea {
+
+  background-color : #f4f1ec;
+
+}
+textarea {
+  width: 100%;
+  height: 30px;
+  border-bottom: black;
+}

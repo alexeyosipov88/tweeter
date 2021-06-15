@@ -9,22 +9,20 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-main {
-  width: 80%;
-  display: flex;
-  justify-content: centers;
-}
-
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ main {
+  width: 90%;
+  background-color: #f4f1ec;
+  margin: auto;
+  
+}
