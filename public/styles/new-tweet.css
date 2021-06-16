@@ -22,3 +22,6 @@ textarea {
   height: 30px;
   border-bottom: black;
 }
+.counter {
+  color: blue;
+}
