@@ -23,6 +23,8 @@ textarea {
   border-bottom: black;
 }
 .counter {
-  color: blue;
+  color: #545149;
+  font-family: "Bungee";
+  font-weight: bold;
+  font-size: 25px;
 }
-

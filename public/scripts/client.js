@@ -27,6 +27,7 @@ $(document).ready(function() {
     $(this).css('color', 'unset');
   })
 
+  $('.date-of-the-tweet').html(timeago.format(new Date()));
 
 
 });
