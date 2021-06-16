@@ -1,8 +1,10 @@
 $(document).ready(function() {
-  $('textarea').on('keydown', function() {
-    $(this).parents('html').find('.counter').html(139 - ($(this).val().length - 1));
-    if ($(this).val().length > 139  ) {
+  $('textarea').on('keyup', function() {
+    $(this).parents('html').find('.counter').html(140 - ($(this).val().length));
+    if ($(this).val().length > 140) {
       $(this).parents('html').find('.counter').css('color', 'red')
+    } else {
+      $(this).parents('html').find('.counter').css('color', 'blue')
     }
   })
 });
