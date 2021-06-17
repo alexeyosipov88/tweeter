@@ -1,7 +1,4 @@
 $(document).ready(function() {
-
-
-
   $('textarea').on('keyup', function() {
     $(this).parents('html').find('.counter').html(140 -$(this).val().length);
     if ($(this).val().length > 140) {

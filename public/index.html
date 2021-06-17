@@ -46,7 +46,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="submit-tweet" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="button-and-counter">
@@ -55,25 +55,8 @@
           </div>
         </form>
       </section>
-      <section id="tweet-container">
-        <article class="tweet"> 
-          <header>
-            <div class="name-and-avatar">
-              <div>name</div>
-              <div><img class="avatar" src="./images/profile-hex.png" alt="avatar"></div>
-            </div>
-            <div class="loginID">@login</div> 
-          </header>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut metus vitae lacus aliquam consequat. Donec efficitur mauris vel consectetur placerat. Vestibulum faucibus justo vitae ante posuere, a pharetra massa commodo.  </p>
-          <footer>
-            <div class="date-of-the-tweet"></div>
-            <div class="icons-on-tweets">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+      <section id="tweets-container">
+       
       </section>
     </main>
   </body>

@@ -1,4 +1,4 @@
-#tweet-container {
+#tweets-container {
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -48,6 +48,14 @@ article.tweet footer {
   display: flex;
   width: 130px;
   justify-content: space-evenly;
+}
+
+.icons-on-tweets :hover {
+  color: orange;
+}
+
+#tweets-container :hover {
+  box-shadow: 10px 5px 5px grey;
 }
 
 .avatar {
