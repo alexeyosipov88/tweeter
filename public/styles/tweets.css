@@ -50,15 +50,20 @@ article.tweet footer {
   justify-content: space-evenly;
 }
 
+article:hover {
+  box-shadow: 5px 10px;
+}
+
+
 .icons-on-tweets :hover {
   color: orange;
 }
 
-#tweets-container :hover {
-  box-shadow: 10px 5px 5px grey;
-}
 
 .avatar {
   width: 70px;
+}
+.avatar :hover {
+  color: green;
 }
 

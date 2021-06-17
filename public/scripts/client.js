@@ -33,8 +33,9 @@ $(document).ready(function () {
   ]
 
   const renderTweets = function (tweets) {
+    $('#tweets-container').empty();
     for (let tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
     return;
   }
@@ -50,7 +51,7 @@ $(document).ready(function () {
     </header>
     <p>${data.content.text}</p>
     <footer>
-      <div class="date-of-the-tweet">${data.created_at}</div>
+      <div class="date-of-the-tweet">${moment(data.created_at).fromNow()}</div>
       <div class="icons-on-tweets">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -100,51 +101,15 @@ $(document).ready(function () {
       dataType: 'json',
       data: $(this).serialize(),
     })
-      .then(function (result) {
-      console.log('Success: ', morePostsHtml);
+    .then(
+      loadTweets()
+      )
 
-    });
   });
 
 
-  /* const loadTweets = (callback) => {
-  callback();
-  $.ajax({
-      url: '/tweets',
-      type: "GET",
-      dataType: "json",
-      success: function (data) {
-        loadTweets(data);
-      }
-    })
-    return data;
-  } */
-
-  /* $('.tweet').hover(function () {
-    $(this).css('box-shadow', '10px 5px 5px grey')
-  }, function () {
-    $(this).css('box-shadow', 'unset')
-  });
-
-  $('.icons-on-tweets').hover(function () {
-    $(this).css('color', 'orange');
-  }, function () {
-    $(this).css('color', 'unset');
-  }) 
-
-  $('.fas.fa-retweet').hover(function () {
-    $(this).css('color', 'orange');
-  }, function () {
-    $(this).css('color', 'unset');
-  })
-
-  $('.fas.fa-heart').hover(function () {
-    $(this).css('color', 'orange');
-  }, function () {
-    $(this).css('color', 'unset');
-  }) */
  
-  $('.date-of-the-tweet').html(timeago.format($('.data-of-the-tweet').val()));
+/*   $('.date-of-the-tweet').html(timeago.format($('.data-of-the-tweet').val())); */
 
 
 
