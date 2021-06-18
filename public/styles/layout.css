@@ -27,9 +27,18 @@ body {
   
 }
 
-/* @media only screen and (min-width: 320px){
+@media only screen and (min-width: 1024px) {
   body {
-    background-color: red;
+    display: flex; 
   }
- */
+  header {
+    /* width: 50%; */
+    width: 50%;
+    margin: 7em 1em 1em 1em;
+  }
+  main {
+    width: 50%;
+    margin: 5em 1em 1em 1em;
+  }
+
 }

@@ -65,6 +65,7 @@ $(document).ready(function () {
   `
     return $(htmlTemplate);
   }
+// function to load tweets from the database
 
   const loadTweets = () => {
     let promise = new Promise(function (resolve, reject) {
@@ -109,8 +110,11 @@ $(document).ready(function () {
       .then(
         loadTweets()
         )
+      $('form')[0].reset();
+      $('.counter').html('140');
      } 
   });
   autosize($("textarea"));
+  
 });
 
