@@ -26,3 +26,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
+#double-arrow {
+  color: red;
+}

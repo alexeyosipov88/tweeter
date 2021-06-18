@@ -28,6 +28,8 @@ textarea {
   width: 100%;
   height: 30px;
   border-bottom: 5px solid black;
+  resize: none;
+  overflow-y: hidden;
 }
 .counter {
   color: #545149;
@@ -38,6 +40,10 @@ textarea {
 
 #label {
   font-size: 30px;;
+}
+
+.text-area-tweet {
+  overflow-wrap: break-word;
 }
 
 #error-too-many {

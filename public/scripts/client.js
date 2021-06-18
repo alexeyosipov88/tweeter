@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(document).ready(function () {
   const data = [
     {
@@ -53,7 +52,7 @@ $(document).ready(function () {
       </div>
       <div class="loginID">${data.user.handle}</div> 
     </header>
-    <p>${data.content.text}</p>
+    <p class='text-area-tweet'>${data.content.text}</p>
     <footer>
       <div class="date-of-the-tweet">${moment(data.created_at).fromNow()}</div>
       <div class="icons-on-tweets">
@@ -66,6 +65,7 @@ $(document).ready(function () {
   `
     return $(htmlTemplate);
   }
+
   const loadTweets = () => {
     let promise = new Promise(function (resolve, reject) {
       $.ajax({
@@ -111,9 +111,6 @@ $(document).ready(function () {
         )
      } 
   });
-
-
-  
-
+  autosize($("textarea"));
 });
 
