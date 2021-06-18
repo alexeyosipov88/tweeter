@@ -4,6 +4,7 @@
 }
 article {
   border: 0.5em solid;
+  margin-bottom: 1em;
 }
 
 article.tweet header {
@@ -51,7 +52,8 @@ article.tweet footer {
 }
 
 article:hover {
-  box-shadow: 5px 10px;
+  box-shadow: 5px 10px 10px 10px grey;
+  
 }
 
 

@@ -5,7 +5,6 @@
  */
 
 $(document).ready(function () {
-
   const data = [
     {
       "user": {
@@ -31,7 +30,6 @@ $(document).ready(function () {
       "created_at": 1461113959088
     }
   ]
-
   const renderTweets = function (tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
@@ -39,13 +37,19 @@ $(document).ready(function () {
     }
     return;
   }
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (data) => {
     const htmlTemplate = `
     <article class="tweet"> 
     <header>
       <div class="name-and-avatar">
         <div>${data.user.name}</div>
-        <div><img class="avatar" src="${data.user.avatars}"></div>
+        <div><img class="avatar" src="${escape(data.user.avatars)}"></div>
       </div>
       <div class="loginID">${data.user.handle}</div> 
     </header>
@@ -62,9 +66,6 @@ $(document).ready(function () {
   `
     return $(htmlTemplate);
   }
-
- 
-
   const loadTweets = () => {
     let promise = new Promise(function (resolve, reject) {
       $.ajax({
@@ -80,38 +81,39 @@ $(document).ready(function () {
      renderTweets(data);
    })
   }
-
   loadTweets();
 
   $("#submit-tweet").submit(function (event) {
     if ($(this).serialize() === `text=`) {
       event.preventDefault();
-      alert("Tweet is epmty!")
-      return;
+      $('#label').hide();
+      $('#error-empty').show();
+      $('#error-too-many').hide()
     } 
-    if ($(this).serialize().length > 145) {
+      else if ($(this).serialize().length > 145) {
       event.preventDefault();
-      alert("Tweet is more than 140 characters")
-      return;
-    } 
-    event.preventDefault();
-    $.ajax({
-      url: '/tweets',
-      type: 'post',
-      dataType: 'json',
-      data: $(this).serialize(),
-    })
-    .then(
-      loadTweets()
-      )
-
+      $('#error-too-many').show();
+      $('#error-empty').hide();
+      $('#label').hide();
+    } else {
+      $('#error-empty').hide()
+      $('#error-too-many').hide()
+      $('#label').show();
+      event.preventDefault();
+      $.ajax({
+        url: '/tweets',
+        type: 'post',
+        dataType: 'json',
+        data: $(this).serialize(),
+      })
+      .then(
+        loadTweets()
+        )
+     } 
   });
 
 
- 
-/*   $('.date-of-the-tweet').html(timeago.format($('.data-of-the-tweet').val())); */
-
-
+  
 
 });
 
