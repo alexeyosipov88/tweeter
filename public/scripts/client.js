@@ -48,11 +48,11 @@ $(document).ready(function () {
     <header>
       <div class="name-and-avatar">
         <div>${data.user.name}</div>
-        <div><img class="avatar" src="${escape(data.user.avatars)}"></div>
+        <div><img class="avatar" src="${data.user.avatars}"></div>
       </div>
       <div class="loginID">${data.user.handle}</div> 
     </header>
-    <p class='text-area-tweet'>${data.content.text}</p>
+    <p class='text-area-tweet'>${escape(data.content.text)}</p>
     <footer>
       <div class="date-of-the-tweet">${moment(data.created_at).fromNow()}</div>
       <div class="icons-on-tweets">
@@ -65,7 +65,7 @@ $(document).ready(function () {
   `
     return $(htmlTemplate);
   }
-// function to load tweets from the database
+  // function to load tweets from the database
 
   const loadTweets = () => {
     let promise = new Promise(function (resolve, reject) {
@@ -78,20 +78,23 @@ $(document).ready(function () {
         }
       })
     });
-   promise.then((data) => {
-     renderTweets(data);
-   })
+    promise.then((data) => {
+      renderTweets(data);
+    })
   }
   loadTweets();
 
   $("#submit-tweet").submit(function (event) {
-    if ($(this).serialize() === `text=`) {
+    const string = $(this).serialize();
+    const newString = string.replaceAll('%20', ' ');
+    console.log(newString)
+    if (newString === `text=`) {
       event.preventDefault();
       $('#label').hide();
       $('#error-empty').show();
       $('#error-too-many').hide()
-    } 
-      else if ($(this).serialize().length > 145) {
+    }
+    else if (newString.length > 145) {
       event.preventDefault();
       $('#error-too-many').show();
       $('#error-empty').hide();
@@ -107,14 +110,13 @@ $(document).ready(function () {
         dataType: 'json',
         data: $(this).serialize(),
       })
-      .then(
-        loadTweets()
+        .then(
+          loadTweets()
         )
       $('form')[0].reset();
       $('.counter').html('140');
-     } 
+    }
   });
   autosize($("textarea"));
-  
 });
 
