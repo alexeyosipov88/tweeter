@@ -14,13 +14,14 @@ nav {
 }
 
 #name-of-app {
+  font-size: 40px;
   font-family: "Bungee";
   color: white;
 }
 
 #write-new-tweet {
-  font-size: 20px;
-  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
