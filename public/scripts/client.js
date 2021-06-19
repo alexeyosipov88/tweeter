@@ -4,7 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
- 
+  //function to render tweets
+
   const renderTweets = function (tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
@@ -12,11 +13,15 @@ $(document).ready(function () {
     }
     return;
   }
+  // function to prevent cross site scripting
+
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  // function to create tweet element using string literal
 
   const createTweetElement = (data) => {
     const htmlTemplate = `
@@ -58,7 +63,9 @@ $(document).ready(function () {
       renderTweets(data);
     })
   }
+
   loadTweets();
+// jquery for hadnling tweet submit
 
   $("#submit-tweet").submit(function (event) {
     const string = $(this).serialize();
