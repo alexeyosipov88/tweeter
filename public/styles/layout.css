@@ -24,26 +24,20 @@ body {
   width: 90%;
   background-color: #f4f1ec;
   margin: auto;
-  
 }
 
 @media only screen and (min-width: 200px) {
-  
-
   body {
     display: flex; 
     flex-direction: column;
   }
-  
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  
   body {
     display: flex; 
     flex-direction: column;
   }
-  
 }
 
 
