@@ -27,20 +27,15 @@ body {
   
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 200px) {
+  
+
   body {
     display: flex; 
-    flex-direction: row;
+    flex-direction: column;
   }
-  header {
-    width: 50%;
-    margin: 7em 1em 1em 1em;
-  }
-  main {
-    margin: 5em 2em 1em 1em;
-  }
+  
 }
-
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   
@@ -52,3 +47,18 @@ body {
 }
 
 
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex; 
+    flex-direction: row;
+  }
+  header {
+    width: 50%;
+    margin: 7em 1em 1em 1em;
+  }
+  main {
+    margin: 5em 2em 1em 1em;
+    max-width: 50%;
+  }
+
+}
